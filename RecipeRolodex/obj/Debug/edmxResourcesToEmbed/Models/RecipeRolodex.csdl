@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecipeRolodexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FoodGroupCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FoodGroupID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="FoodGroup" Relationship="Self.FK_FoodGroup_FoodGroupCategories_ID" FromRole="FoodGroupCategories" ToRole="FoodGroups" />
+    <NavigationProperty Name="Ingredients" Relationship="Self.FK_FoodGroupCategories_Ingredients_ID" FromRole="FoodGroupCategories" ToRole="Ingredients" />
+  </EntityType>
+  <EntityType Name="FoodGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FoodGroup1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FoodGroupCategories" Relationship="Self.FK_FoodGroup_FoodGroupCategories_ID" FromRole="FoodGroups" ToRole="FoodGroupCategories" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FoodCategoryID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="FoodGroupCategory" Relationship="Self.FK_FoodGroupCategories_Ingredients_ID" FromRole="Ingredients" ToRole="FoodGroupCategories" />
+    <NavigationProperty Name="IngredientSteps" Relationship="Self.FK_Ingredients_IngredientSteps_ID" FromRole="Ingredients" ToRole="IngredientSteps" />
+  </EntityType>
+  <EntityType Name="IngredientStep">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RecipeID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeID" Type="Int64" Nullable="false" />
+    <Property Name="MeasurementQuantity" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="MeasurementID" Type="Int64" Nullable="false" />
+    <Property Name="IngredientID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Ingredient" Relationship="Self.FK_Ingredients_IngredientSteps_ID" FromRole="IngredientSteps" ToRole="Ingredients" />
+    <NavigationProperty Name="Recipe" Relationship="Self.FK_IngredientSteps_Recipes_ID" FromRole="IngredientSteps" ToRole="Recipes" />
+    <NavigationProperty Name="Measurement" Relationship="Self.FK_Measurements_IngredientSteps_ID" FromRole="IngredientSteps" ToRole="Measurements" />
+  </EntityType>
+  <EntityType Name="InstructionStep">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RecipeID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecipeID" Type="Int64" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StepNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Recipe" Relationship="Self.FK_InstructionSteps_Recipes_ID" FromRole="InstructionSteps" ToRole="Recipes" />
+  </EntityType>
+  <EntityType Name="MealCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Recipes" Relationship="Self.FK_MealCategories_Recipes_ID" FromRole="MealCategories" ToRole="Recipes" />
+  </EntityType>
+  <EntityType Name="Measurement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Abbreviation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="IngredientSteps" Relationship="Self.FK_Measurements_IngredientSteps_ID" FromRole="Measurements" ToRole="IngredientSteps" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrepTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="CookTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="MealCategoryID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="IngredientSteps" Relationship="Self.FK_IngredientSteps_Recipes_ID" FromRole="Recipes" ToRole="IngredientSteps" />
+    <NavigationProperty Name="InstructionSteps" Relationship="Self.FK_InstructionSteps_Recipes_ID" FromRole="Recipes" ToRole="InstructionSteps" />
+    <NavigationProperty Name="MealCategory" Relationship="Self.FK_MealCategories_Recipes_ID" FromRole="Recipes" ToRole="MealCategories" />
+    <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="RecipeRolodexModel.FK_AspNetUsers_Recipes_ID" FromRole="Recipe" ToRole="AspNetUser" />
+  </EntityType>
+  <Association Name="FK_FoodGroup_FoodGroupCategories_ID">
+    <End Role="FoodGroups" Type="Self.FoodGroup" Multiplicity="1" />
+    <End Role="FoodGroupCategories" Type="Self.FoodGroupCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoodGroupCategories">
+        <PropertyRef Name="FoodGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodGroupCategories_Ingredients_ID">
+    <End Role="FoodGroupCategories" Type="Self.FoodGroupCategory" Multiplicity="1" />
+    <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodGroupCategories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ingredients">
+        <PropertyRef Name="FoodCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ingredients_IngredientSteps_ID">
+    <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="IngredientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngredientSteps_Recipes_ID">
+    <End Role="Recipes" Type="Self.Recipe" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Measurements_IngredientSteps_ID">
+    <End Role="Measurements" Type="Self.Measurement" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Measurements">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="MeasurementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstructionSteps_Recipes_ID">
+    <End Role="Recipes" Type="Self.Recipe" Multiplicity="1" />
+    <End Role="InstructionSteps" Type="Self.InstructionStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="InstructionSteps">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MealCategories_Recipes_ID">
+    <End Role="MealCategories" Type="Self.MealCategory" Multiplicity="1" />
+    <End Role="Recipes" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MealCategories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="MealCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecipeRolodexEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FoodGroupCategories" EntityType="Self.FoodGroupCategory" />
+    <EntitySet Name="FoodGroups" EntityType="Self.FoodGroup" />
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+    <EntitySet Name="IngredientSteps" EntityType="Self.IngredientStep" />
+    <EntitySet Name="InstructionSteps" EntityType="Self.InstructionStep" />
+    <EntitySet Name="MealCategories" EntityType="Self.MealCategory" />
+    <EntitySet Name="Measurements" EntityType="Self.Measurement" />
+    <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+    <AssociationSet Name="FK_FoodGroup_FoodGroupCategories_ID" Association="Self.FK_FoodGroup_FoodGroupCategories_ID">
+      <End Role="FoodGroups" EntitySet="FoodGroups" />
+      <End Role="FoodGroupCategories" EntitySet="FoodGroupCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodGroupCategories_Ingredients_ID" Association="Self.FK_FoodGroupCategories_Ingredients_ID">
+      <End Role="FoodGroupCategories" EntitySet="FoodGroupCategories" />
+      <End Role="Ingredients" EntitySet="Ingredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingredients_IngredientSteps_ID" Association="Self.FK_Ingredients_IngredientSteps_ID">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngredientSteps_Recipes_ID" Association="Self.FK_IngredientSteps_Recipes_ID">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Measurements_IngredientSteps_ID" Association="Self.FK_Measurements_IngredientSteps_ID">
+      <End Role="Measurements" EntitySet="Measurements" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstructionSteps_Recipes_ID" Association="Self.FK_InstructionSteps_Recipes_ID">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="InstructionSteps" EntitySet="InstructionSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MealCategories_Recipes_ID" Association="Self.FK_MealCategories_Recipes_ID">
+      <End Role="MealCategories" EntitySet="MealCategories" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="RecipeRolodexModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="RecipeRolodexModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="RecipeRolodexModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="RecipeRolodexModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="RecipeRolodexModel.AspNetUser" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="RecipeRolodexModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="RecipeRolodexModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUsers_Recipes_ID" Association="RecipeRolodexModel.FK_AspNetUsers_Recipes_ID">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="Recipe" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="RecipeRolodexModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="RecipeRolodexModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="RecipeRolodexModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="RecipeRolodexModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="RecipeRolodexModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="RecipeRolodexModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="Recipes" Relationship="RecipeRolodexModel.FK_AspNetUsers_Recipes_ID" FromRole="AspNetUser" ToRole="Recipe" />
+    <NavigationProperty Name="AspNetRoles" Relationship="RecipeRolodexModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="RecipeRolodexModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RecipeRolodexModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="RecipeRolodexModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RecipeRolodexModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUsers_Recipes_ID">
+    <End Type="RecipeRolodexModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+    <End Type="RecipeRolodexModel.Recipe" Role="Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="RecipeRolodexModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="RecipeRolodexModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecipeRolodexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FoodGroups">
+    <Key>
+      <PropertyRef Name="FoodGroupID" />
+    </Key>
+    <Property Name="FoodGroupID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ingredients">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FoodGroupID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IngredientSteps">
+    <Key>
+      <PropertyRef Name="IngredientStepID" />
+      <PropertyRef Name="RecipeID" />
+    </Key>
+    <Property Name="IngredientStepID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecipeID" Type="bigint" Nullable="false" />
+    <Property Name="IngredientID" Type="bigint" Nullable="false" />
+    <Property Name="MeasurementID" Type="bigint" Nullable="false" />
+    <Property Name="MeasurementQty" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstructionSteps">
+    <Key>
+      <PropertyRef Name="InstructionStepID" />
+      <PropertyRef Name="RecipeID" />
+    </Key>
+    <Property Name="InstructionStepID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecipeID" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="StepNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MealCategories">
+    <Key>
+      <PropertyRef Name="MealCategoryID" />
+    </Key>
+    <Property Name="MealCategoryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Measurements">
+    <Key>
+      <PropertyRef Name="MeasurementID" />
+    </Key>
+    <Property Name="MeasurementID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Abbreviation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unit" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Recipes">
+    <Key>
+      <PropertyRef Name="RecipeID" />
+    </Key>
+    <Property Name="RecipeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="MealCategoryID" Type="bigint" Nullable="false" />
+    <Property Name="PrepTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="CookTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Ingredients_FoodGroups_FoodGroupID">
+    <End Role="FoodGroups" Type="Self.FoodGroups" Multiplicity="1" />
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodGroups">
+        <PropertyRef Name="FoodGroupID" />
+      </Principal>
+      <Dependent Role="Ingredients">
+        <PropertyRef Name="FoodGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngredientSteps_Ingredients_IngredientID">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="IngredientID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="IngredientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngredientSteps_Measurements_MeasurementID">
+    <End Role="Measurements" Type="Self.Measurements" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Measurements">
+        <PropertyRef Name="MeasurementID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="MeasurementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngredientSteps_Recipes_RecipeID">
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+    <End Role="IngredientSteps" Type="Self.IngredientSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="RecipeID" />
+      </Principal>
+      <Dependent Role="IngredientSteps">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_IngredientSteps_IngredientStepID">
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+    <End Role="InstructionSteps" Type="Self.InstructionSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="RecipeID" />
+      </Principal>
+      <Dependent Role="InstructionSteps">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_MealCategories_MealCategoryID">
+    <End Role="MealCategories" Type="Self.MealCategories" Multiplicity="1" />
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MealCategories">
+        <PropertyRef Name="MealCategoryID" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="MealCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecipeRolodexModelStoreContainer">
+    <EntitySet Name="FoodGroups" EntityType="Self.FoodGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IngredientSteps" EntityType="Self.IngredientSteps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstructionSteps" EntityType="Self.InstructionSteps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MealCategories" EntityType="Self.MealCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Measurements" EntityType="Self.Measurements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Ingredients_FoodGroups_FoodGroupID" Association="Self.FK_Ingredients_FoodGroups_FoodGroupID">
+      <End Role="FoodGroups" EntitySet="FoodGroups" />
+      <End Role="Ingredients" EntitySet="Ingredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngredientSteps_Ingredients_IngredientID" Association="Self.FK_IngredientSteps_Ingredients_IngredientID">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngredientSteps_Measurements_MeasurementID" Association="Self.FK_IngredientSteps_Measurements_MeasurementID">
+      <End Role="Measurements" EntitySet="Measurements" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngredientSteps_Recipes_RecipeID" Association="Self.FK_IngredientSteps_Recipes_RecipeID">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="IngredientSteps" EntitySet="IngredientSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_IngredientSteps_IngredientStepID" Association="Self.FK_Recipes_IngredientSteps_IngredientStepID">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="InstructionSteps" EntitySet="InstructionSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_MealCategories_MealCategoryID" Association="Self.FK_Recipes_MealCategories_MealCategoryID">
+      <End Role="MealCategories" EntitySet="MealCategories" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

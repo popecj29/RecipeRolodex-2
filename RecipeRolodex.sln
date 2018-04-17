@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeRolodex", "RecipeRolodex\RecipeRolodex.csproj", "{1CD8E0A3-9A51-48F6-8E63-D13CE9E94A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeRolodex.Tests", "RecipeRolodex.Tests\RecipeRolodex.Tests.csproj", "{D439FE22-F5DB-45A0-9F31-8AE616F18F13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CD8E0A3-9A51-48F6-8E63-D13CE9E94A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD8E0A3-9A51-48F6-8E63-D13CE9E94A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD8E0A3-9A51-48F6-8E63-D13CE9E94A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD8E0A3-9A51-48F6-8E63-D13CE9E94A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D439FE22-F5DB-45A0-9F31-8AE616F18F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D439FE22-F5DB-45A0-9F31-8AE616F18F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D439FE22-F5DB-45A0-9F31-8AE616F18F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D439FE22-F5DB-45A0-9F31-8AE616F18F13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

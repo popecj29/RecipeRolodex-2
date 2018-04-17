@@ -1,0 +1,110 @@
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\csc.exe
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\vbc.exe
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.dll.config
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.pdb
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Owin.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.pdb
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.dll
+C:\Users\Charlie Pope\Desktop\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.pdb
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\csc.exe
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\vbc.exe
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.dll.config
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.Tests.pdb
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Razor.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Owin.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\EntityFramework.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\RecipeRolodex.pdb
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Razor.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\EntityFramework.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.csprojResolveAssemblyReference.cache
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.dll
+C:\Dev\RecipeRolodex\RecipeRolodex.Tests\obj\Debug\RecipeRolodex.Tests.pdb
